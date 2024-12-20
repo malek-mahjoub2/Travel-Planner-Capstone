@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import Background from './components/Background';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import PopularDestinations from './components/PopularDestinations';
 
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
 
   const handleSearch = (destination) => {
     setDestination(destination);
-    // Here you can integrate the API call to fetch weather, location, and date for the destination
     console.log(`Searching for destination: ${destination}`);
   };
 
@@ -22,6 +22,8 @@ function App() {
       <Background />
       <SearchBar onSearch={handleSearch} />
       <InfoBar />
+      <PopularDestinations />
+
     </div>
   );
 }
