@@ -10,24 +10,25 @@
   
   .country-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Allow the items to wrap */
+    justify-content: space-between; /* Distribute items with equal space */
     gap: 20px; /* Gap between the images */
     margin-top: 20px;
   }
   
   .country-card {
-    width: 100%; /* Make image fill the width of the container */
-    height: 200px; /* Set a fixed height for the images */
-    object-fit: cover; 
+    width: 30%; /* Make each card take up 30% of the width (3 items per row) */
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
   }
   
   .country-card img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    width: 100%; /* Make image fill the width of the container */
     height: 200px; /* Set a fixed height for the images */
-    object-fit: cover; 
+    object-fit: cover; /* Make the images cover the area without distortion */
+    border-radius: 8px;
   }
   
   .country-card img:hover {
@@ -47,6 +48,8 @@
     padding: 5px;
     border-radius: 4px;
   }
+  
+  /* Make it responsive */
   @media (max-width: 768px) {
     .country-card {
       width: 45%; /* 2 images per row on smaller screens */
@@ -58,3 +61,4 @@
       width: 100%; /* 1 image per row on very small screens */
     }
   }
+  
