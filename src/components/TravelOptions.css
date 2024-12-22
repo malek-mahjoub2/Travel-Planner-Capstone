@@ -1,0 +1,66 @@
+/* TravelOptions.css */
+.travel-options-container {
+    margin-top: 100px; /* Add more space between this section and the one above */
+  }
+  
+  .travel-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 5px #eee; /* Add shadow with color #eee */
+  }
+  
+  .travel-option {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .travel-option i {
+    font-size: 60px;
+    color: #000; /* Set the icon color to black */
+    margin-bottom: 15px;
+  }
+  
+  .travel-option h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .travel-option p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .travel-option button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .travel-option button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .travel-options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .travel-option {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  
