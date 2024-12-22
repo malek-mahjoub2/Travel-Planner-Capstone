@@ -8,8 +8,7 @@ import qatarImage from '../images/qatar.jpg';
 import saudiImage from '../images/saudi.jpg';
 
 
-function PopularDestinations() {
-  // Define the countries and their images
+function PopularDestinations(onCountryClick) {
   const countries = [
     { name: 'Tunisia', imageUrl: tunisImage },
     { name: 'Algeria', imageUrl: algerImage },
@@ -20,8 +19,7 @@ function PopularDestinations() {
   ];
 
   const handleClick = (countryName) => {
-    alert(`You clicked on ${countryName}`);
-    // You can replace the alert with other actions, like navigating to a country details page
+    onCountryClick(countryName);
   };
 
   return (
