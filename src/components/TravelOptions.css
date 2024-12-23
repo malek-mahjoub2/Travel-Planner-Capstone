@@ -1,6 +1,7 @@
 /* TravelOptions.css */
 .travel-options-container {
-    margin-top: 100px; /* Add more space between this section and the one above */
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
   
   .travel-options {

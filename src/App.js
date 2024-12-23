@@ -4,6 +4,7 @@ import InfoBar from './components/InfoBar';
 import CountryVideo from './components/CountryVideo';  // Correct path to your CountryVideo component
 import TravelOptions from './components/TravelOptions';
 import Background from './components/Background';
+import ClientReviews from './components/ClientReviews'
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import PopularDestinations from './components/PopularDestinations';
@@ -53,6 +54,7 @@ function App() {
       )}
 
       <TravelOptions />
+      <ClientReviews />
     </div>
   );
 }

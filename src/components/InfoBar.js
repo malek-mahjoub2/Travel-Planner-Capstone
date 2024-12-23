@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InfoBar() {
+function InfoBar({ onSearch }) {
   // State for SearchBar
   const [destination, setDestination] = useState('');
 
@@ -10,17 +10,19 @@ function InfoBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle search action (you can call a parent function or process it here)
-    console.log("Searching for:", destination);
+    // Call onSearch function to handle the search action
+    onSearch(destination);
   };
 
   return (
-    <div className="info-bar">
-      {/* InfoBar Section */}
-      <div className="date-location-weather">
-        <span><i className="fas fa-calendar-day"></i> <strong>Date</strong></span>
-        <span><i className="fas fa-map-pin"></i> <strong>Location</strong></span>
-        <span><i className="fas fa-cloud-sun"></i> <strong>Weather</strong></span>
+    <div className="info-bar-container">
+      <div className="info-bar">
+        {/* Static Info Bar - Date, Location, Weather */}
+        <div className="date-location-weather">
+          <span><i className="fas fa-calendar-day"></i> <strong>Date</strong></span>
+          <span><i className="fas fa-map-pin"></i> <strong>Location</strong></span>
+          <span><i className="fas fa-cloud-sun"></i> <strong>Weather</strong></span>
+        </div>
       </div>
 
       {/* SearchBar Section */}
