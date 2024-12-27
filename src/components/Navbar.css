@@ -1,0 +1,93 @@
+/* src/components/Navbar.css */
+
+.navbar {
+    position: fixed; /* Fixed navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.962); /* Transparent black background */
+    
+    padding: 0.001% 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Solid background on hover */
+  }
+  
+  .logo img {
+    width: 100px; /* Adjust logo size */
+    height: auto;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 30px;
+  }
+  
+  .nav-links a {
+    color: rgb(19, 17, 17);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00aaff; /* Blue hover effect */
+  }
+  
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: white;
+  }
+  
+  .nav-links.active {
+    display: block;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .nav-links li {
+      margin-bottom: 20px;
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  
+    .nav-links.active {
+      display: block;
+    }
+  }
+  

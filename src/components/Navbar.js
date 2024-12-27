@@ -1,19 +1,38 @@
-import React from 'react';
+// src/components/Navbar.js
+
+import React, { useState } from 'react';
 import logo from '../images/logo.jpg'; 
+import './Navbar.css'; // Import CSS for styling
+
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Toggle the menu for mobile view
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
-      <ul className="nav-links">
+      {/* Navigation links */}
+      <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Tours</a></li>
         <li><a href="#">Destinations</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Activities</a></li>
+        <li><a href="#">Itinerary Planner</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
+      
+      {/* Hamburger icon for mobile */}
+      <div className="navbar-toggle" onClick={toggleMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
     </nav>
   );
 }

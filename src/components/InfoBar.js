@@ -10,14 +10,13 @@ function InfoBar({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call onSearch function to handle the search action
     onSearch(destination);
   };
 
   return (
     <div className="info-bar-container">
       <div className="info-bar">
-        {/* Static Info Bar - Date, Location, Weather */}
+
         <div className="date-location-weather">
           <span><i className="fas fa-calendar-day"></i> <strong>Date</strong></span>
           <span><i className="fas fa-map-pin"></i> <strong>Location</strong></span>

@@ -1,0 +1,73 @@
+/* src/components/HeroSection.css */
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+  }
+  
+  .hero-video {
+    object-fit: cover; /* Ensures the video covers the entire background */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places the video behind the content */
+  }
+  .hero-content-top {
+    position: absolute;
+    top: 10%; /* Place it near the top of the video */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: skyblue;
+    width: 100%;
+    z-index: 2; /* Ensure the top content is above the video */
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+  }
+  
+  .hero-content {
+    position: absolute;
+    bottom: 10%; /* Place this at the bottom part of the video */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensures the text is above the video */
+    font-family: 'Arial', sans-serif;
+}
+  
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+    bottom: 5%;
+    color: rgb(10, 159, 10);
+}
+  
+  .hero-btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #00aaff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    background-color: #0088cc;
+  }
+  

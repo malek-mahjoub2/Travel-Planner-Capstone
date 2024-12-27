@@ -3,12 +3,14 @@ import Navbar from './components/Navbar';
 import InfoBar from './components/InfoBar';
 import CountryVideo from './components/CountryVideo';  // Correct path to your CountryVideo component
 import TravelOptions from './components/TravelOptions';
-import Background from './components/Background';
+import  HeroSection from './components/HeroSection';
 import ClientReviews from './components/ClientReviews'
+import IntroductionSection from './components/IntroductionSection';  // Importing the new section
+import KeyHighlightsSection from './components/KeyHighlightsSection';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import PopularDestinations from './components/PopularDestinations';
-
+import TopDestinations from './components/TopDestinations';
 function App() {
   const [searchResult, setSearchResult] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('');
@@ -43,7 +45,9 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <Background />
+      <HeroSection/>
+      <IntroductionSection />  {/* Placing the Introduction Section here */}
+      <KeyHighlightsSection /> 
       <InfoBar onSearch={handleSearch} searchResult={searchResult} />
       <PopularDestinations onCountryClick={handleCountryClick} />
       
@@ -54,6 +58,7 @@ function App() {
       )}
 
       <TravelOptions />
+      <TopDestinations />
       <ClientReviews />
     </div>
   );
