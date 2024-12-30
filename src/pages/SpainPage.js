@@ -6,8 +6,8 @@ import spainHeaderImage from '../images/spainHeader.jpg';  // Image for Spain he
 import madridImage from '../images/madrid.jpg';  // Image for Madrid
 import barcelonaImage from '../images/barcelona.jpg';  // Image for Barcelona
 import granadaImage from '../images/granada.jpg';  // Image for Granada
-import ibizaImage from '../images/ibiza.jpg';  // Image for Ibiza
-import paellaImage from '../images/paella.jpg';  // Image for paella
+import ibizaImage from '../images/ibiza.jpeg';  // Image for Ibiza
+import paellaImage from '../images/paella.jpeg';  // Image for paella
 import tapasImage from '../images/tapas.jpg';  // Image for tapas
 
 const SpainPage = () => {

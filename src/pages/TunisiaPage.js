@@ -8,9 +8,9 @@ import saharaImage from '../images/sahara.jpg';  // Image for Sahara Desert
 import hammametImage from '../images/hammamet.jpg';  // Image for Hammamet
 import couscousImage from '../images/couscous.jpg';  // Image for couscous
 import brikImage from '../images/brik.jpg';  // Image for brik
-import sidiBouSaidImage from '../images/sidiBouSaid.jpg';  // Image for Sidi Bou Said
 
-const TunisiaPage = () => {
+
+const TunisiaPage = () => { 
   return (
     <div className="tunisia-page">
 
@@ -49,12 +49,7 @@ const TunisiaPage = () => {
             <p>Relax on the Mediterranean coast with stunning beaches, crystal-clear waters, and a vibrant nightlife.</p>
           </div>
 
-          {/* Adding Sidi Bou Said as another destination */}
-          <div className="destination-item">
-            <img src={sidiBouSaidImage} alt="Sidi Bou Said" className="destination-image" />
-            <h3>Sidi Bou Said</h3>
-            <p>Wander the charming streets of this blue-and-white village, offering breathtaking views of the Mediterranean Sea.</p>
-          </div>
+        
         </div>
       </div>
 

@@ -1,60 +1,86 @@
 /* src/components/KeyHighlightsSection.css */
 
 .highlights-container {
-    padding: 40px 20px;
-    background-color: #f0f0f0;
-    text-align: center;
-  }
-  
+  padding: 60px 20px;
+  background-color: #f9f9f9;  /* Lighter background for a soft look */
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlights-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.country-item {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  /* Deeper shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;  /* Fixed height to make the cards uniform */
+}
+
+.country-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);  /* Enhanced shadow on hover */
+}
+
+.country-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.country-item p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px; /* More rounded button for a soft, modern look */
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Button shadow for a floating effect */
+}
+
+.explore-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
   .highlights-title {
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #333;
   }
-  
-  .country-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center;
-  }
-  
+
   .country-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    height: auto;  /* Let the height adjust to content on smaller screens */
   }
-  
-  .country-item:hover {
-    transform: translateY(-10px);
-  }
-  
-  .country-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #007bff;
-  }
-  
-  .country-item p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
-  }
-  
+
   .explore-btn {
-    background-color: #007bff;
-    color: white;
+    font-size: 1rem;
     padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
   }
-  
-  .explore-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}

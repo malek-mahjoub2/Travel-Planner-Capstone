@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './IntroductionSection.css'; 
 import hiking from '../images/hiking.jpg';
@@ -15,7 +14,7 @@ const IntroductionSection = () => {
       
       <div className="intro-icons">
         <div className="icon-item">
-          <img src={hiking} alt="Hiking" className="icon-img"/>
+          <img src={hiking} alt="Hiking Trails" className="icon-img"/>
           <p>Hiking Trails</p>
         </div>
         <div className="icon-item">
@@ -23,7 +22,7 @@ const IntroductionSection = () => {
           <p>River Tours</p>
         </div>
         <div className="icon-item">
-          <img src={wildlife} alt="Vineyards" className="icon-img"/>
+          <img src={wildlife} alt="Vineyard Visits" className="icon-img"/>
           <p>Vineyard Visits</p>
         </div>
       </div>

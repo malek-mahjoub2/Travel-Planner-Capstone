@@ -1,41 +1,66 @@
-/* src/components/IntroductionSection.css */
-
 .intro-container {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-  }
-  
-  .intro-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .intro-text {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #555;
-  }
-  
-  .intro-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-  }
-  
-  .icon-item {
-    text-align: center;
-  }
-  
-  .icon-img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-  }
-  
-  .icon-item p {
-    font-size: 1rem;
-    color: #333;
-  }
-  
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro-title {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #2b3d50;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-icons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.icon-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-img {
+  width: 300px; /* Increased width for rectangular shape */
+  height: 300px; /* Set height for rectangular shape */
+  margin-bottom: 15px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icon-item p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.icon-item:hover .icon-img {
+  transform: scale(1.1); /* Zoom effect */
+}
