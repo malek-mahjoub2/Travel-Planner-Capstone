@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function AttractionList({ destination }) {
+function AttractionList({ destination, activities }) {
   const [attractions, setAttractions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (destination) {
-      fetchAttractions(destination);
+      fetchAttractions(destination, activities);
     }
-  }, [destination]);
+  }, [destination, activities]);
 
-  const fetchAttractions = async (dest) => {
+  const fetchAttractions = async (dest, activities) => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://booking-com15.p.rapidapi.com/api/v1/attraction/searchAttractions?id=${dest}&sortBy=trending&page=1&currency_code=USD&languagecode=en-us`, {
+      const response = await axios.get(`https://booking-com15.p.rapidapi.com/api/v1/attraction/searchAttractions`, {
+        params: {
+          id: dest,
+          activities: activities.join(','),
+        },
         headers: {
           'x-rapidapi-host': 'booking-com15.p.rapidapi.com',
           'x-rapidapi-key': '6c0197e667mshe3ae4cf333d67a8p178ee6jsnbe828bef6ac9',
