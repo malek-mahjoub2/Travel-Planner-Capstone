@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import DestinationPage from './DestinationPage';
-import FlightSearch from './FlightSearch';
-import AttractionList from './AttractionList';
-import HotelSearch from './HotelSearch'; // Add hotel search feature
-import './PlanYourTrip.css'; // CSS for this page
+import { searchFlights, searchHotels, searchAttractions } from './api'; // Import API functions
+import FlightSearch from './FlightSearch'; 
 
 const PlanYourTrip = () => {
-  const [destination, setDestination] = useState('');
-  const [people, setPeople] = useState(1); // Number of people
-  const [activities, setActivities] = useState([]); // Activities user selects
+  const [destination, setDestination] = useState(''); // State for selected destination
+  const [flightData, setFlightData] = useState([]); // State to store flight data
+  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
 
   const destinations = [
     { name: 'Tunisia', id: 'TunisiaID' },
@@ -17,91 +15,63 @@ const PlanYourTrip = () => {
     { name: 'Italy', id: 'ItalyID' }
   ];
 
-  // Prices for demonstration (these could come from an API)
-  const prices = {
-    flightPerPerson: 200, // Example flight price per person
-    hotelPerNight: 100, // Example hotel price per night
-    activityCost: 50 // Example activity price per activity
-  };
+  useEffect(() => {
+    if (!destination) return; // Exit if no destination is selected
 
-  // Handle activities selection
-  const handleActivityChange = (activity) => {
-    setActivities(prev => prev.includes(activity) ? prev.filter(item => item !== activity) : [...prev, activity]);
-  };
+    const fetchData = async () => {
+      setIsLoading(true); // Set loading state to true
+      setError(null); // Reset error
 
-  // Calculate flight price based on number of people
-  const calculateFlightPrice = () => {
-    return prices.flightPerPerson * people;
-  };
+      try {
+        // Fetch flight data for the selected destination
+        const flightResults = await searchFlights('USA', destination, '2025-01-01');
+        setFlightData(flightResults);
 
-  // Calculate hotel price based on destination and number of people (assuming 7 nights stay for simplicity)
-  const calculateHotelPrice = () => {
-    const nights = 7; // Default nights stay (you can make this dynamic)
-    return prices.hotelPerNight * nights * people;
-  };
+        // Fetch hotel and attraction data for the selected destination
+        const hotelResults = await searchHotels(destination, '2025-01-01', '2025-01-07');
+        // Assuming you will use hotelResults somewhere
 
-  // Calculate activity price based on selected activities
-  const calculateActivityPrice = () => {
-    return prices.activityCost * activities.length;
-  };
+        const attractionResults = await searchAttractions(destination);
+        // Assuming you will use attractionResults somewhere
+      } catch (err) {
+        setError('Failed to fetch data. Please try again later.'); // Set error message
+      } finally {
+        setIsLoading(false); // Set loading state to false once data is fetched
+      }
+    };
 
-  // Calculate total price
-  const calculateTotalPrice = () => {
-    return calculateFlightPrice() + calculateHotelPrice() + calculateActivityPrice();
-  };
+    fetchData();
+  }, [destination]);
 
   return (
     <div className="travel-planner-container">
       <h1>Plan Your Natural Escape</h1>
-      <DestinationPage destinations={destinations} onDestinationSelect={setDestination} />
       
-      {/* Select Number of People */}
-      <div className="people-selection">
-        <label htmlFor="people">Number of people: </label>
-        <input
-          type="number"
-          id="people"
-          value={people}
-          onChange={(e) => setPeople(e.target.value)}
-          min="1"
+      {/* Destination Selection */}
+      <div className="destination-selection">
+        <label>Select Your Destination: </label>
+        <select onChange={(e) => setDestination(e.target.value)} value={destination}>
+          <option value="">Select Destination</option>
+          {destinations.map((dest) => (
+            <option key={dest.id} value={dest.name}>{dest.name}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Loading and Error Messages */}
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+
+      {/* Display the flight search */}
+      {destination && !isLoading && !error && (
+        <FlightSearch 
+          departureCountry="USA"  // Set the home country directly
+          destination={destination} 
+          flightData={flightData}
         />
-      </div>
-
-      {/* Activities Selection */}
-      <div className="activities-selection">
-        <h3>Select Activities</h3>
-        <label>
-          <input type="checkbox" onChange={() => handleActivityChange('hiking')} /> Hiking
-        </label>
-        <label>
-          <input type="checkbox" onChange={() => handleActivityChange('swimming')} /> Swimming
-        </label>
-        <label>
-          <input type="checkbox" onChange={() => handleActivityChange('sightseeing')} /> Sightseeing
-        </label>
-        {/* Add more activities as needed */}
-      </div>
-
-      {/* Show flight, hotel, and attractions only when a destination is selected */}
-      {destination && (
-        <>
-          <FlightSearch destination={destination} people={people} />
-          <HotelSearch destination={destination} people={people} />
-          <AttractionList destination={destination} activities={activities} />
-        </>
       )}
 
-      {/* Display Final Price */}
-      {destination && (
-        <div className="final-price">
-          <h3>Estimated Total Price</h3>
-          <p><strong>Flight Cost: </strong>${calculateFlightPrice()}</p>
-          <p><strong>Hotel Cost: </strong>${calculateHotelPrice()}</p>
-          <p><strong>Activities Cost: </strong>${calculateActivityPrice()}</p>
-          <h2><strong>Total Price: </strong>${calculateTotalPrice()}</h2>
-          <button className="book-now-btn">Book Now</button>
-        </div>
-      )}
+      {/* You can add hotel and attraction components if needed */}
     </div>
   );
 };

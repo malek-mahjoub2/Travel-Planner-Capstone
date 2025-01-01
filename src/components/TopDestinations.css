@@ -1,0 +1,78 @@
+/* Main section for top destinations */
+.top-destinations {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 5px #eee; /* Add shadow with color #eee */
+  }
+  
+.destination-card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+
+
+.destination-card img {
+    width: 100%;
+    height: 250px; /* Set image height */
+    object-fit: cover; /* Ensure image covers the entire width */
+  }
+  
+  /* Text label (Special Offer / 20% Off) */
+  .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .tunisia-offer, .morocco-discount { 
+    background-color: #000000; 
+    color:white;/* Yellow for Tunisia offer */
+  }
+  
+  /* Description text at the bottom of the image */
+  .destination-info {
+    position: absolute;
+    bottom: 0; /* Position the description at the bottom of the image */
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .destination-card {
+      width: 100%; /* Full width on smaller screens */
+      margin-right: 10px;
+    }
+  
+    .destination-info {
+      font-size: 0.8rem; /* Smaller font for mobile */
+    }
+  }
+  

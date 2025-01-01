@@ -1,62 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-function FlightSearch({ destination, people }) {
-  const [flights, setFlights] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    if (destination) {
-      fetchFlightData(destination);
-    }
-  }, [destination]);
-
-  const fetchFlightData = async (dest) => {
-    setLoading(true);
-    try {
-      const response = await axios.get(`https://your-flight-api-endpoint.com/searchFlights`, {
-        params: {
-          origin: 'anywhere',
-          destination: dest,
-          currency: 'USD',
-          passengers: people,
-        },
-        headers: {
-          'x-rapidapi-key': '6c0197e667mshe3ae4cf333d67a8p178ee6jsnbe828bef6ac9',
-          'x-rapidapi-host': 'compare-flight-prices.p.rapidapi.com',
-        },
-      });
-      setFlights(response.data.flights);
-    } catch (err) {
-      setError('Failed to fetch flight data');
-    }
-    setLoading(false);
-  };
+const FlightSearch = ({ departureCountry, destination, flightData }) => {
+  if (!flightData || flightData.length === 0) return <div>Loading flights...</div>;
 
   return (
-    <div>
-      {loading && <p>Loading flights...</p>}
-      {error && <p>{error}</p>}
-      {flights.length > 0 ? (
-        <div>
-          <h2>Available Flights to {destination}</h2>
-          <ul>
-            {flights.map((flight, index) => (
-              <li key={index}>
-                <p><strong>Flight {index + 1}</strong></p>
-                <p>Price: ${flight.price}</p>
-                <p>Departure: {flight.departure}</p>
-                <p>Arrival: {flight.arrival}</p>
-              </li>
-            ))}
-          </ul>
+    <div className="flight-search">
+      <h3>Available Flights from {departureCountry} to {destination}</h3>
+      
+      {flightData.map((flight, index) => (
+        <div key={index}>
+          <h4>{flight.airline} - ${flight.price}</h4>
+          <p>Departure: {flight.from} &rarr; Destination: {flight.to}</p>
+          <p>Flight Date: {flight.date}</p>
         </div>
-      ) : (
-        <p>No flights available.</p>
-      )}
+      ))}
     </div>
   );
-}
+};
 
 export default FlightSearch;

@@ -48,8 +48,6 @@ const TunisiaPage = () => {
             <h3>Hammamet Beaches</h3>
             <p>Relax on the Mediterranean coast with stunning beaches, crystal-clear waters, and a vibrant nightlife.</p>
           </div>
-
-        
         </div>
       </div>
 

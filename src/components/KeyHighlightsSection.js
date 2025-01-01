@@ -1,5 +1,3 @@
-// src/components/KeyHighlightsSection.js
-
 import React from 'react';
 import './KeyHighlightsSection.css'; // CSS for styling
 import { Link } from 'react-router-dom'; // To navigate to other sections
