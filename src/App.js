@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
+
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PlanYourTrip from './components/PlanYourTrip';  
 import IntroductionSection from './components/IntroductionSection';
 import KeyHighlightsSection from './components/KeyHighlightsSection';
-
+import ItineraryPlanner from './components/ItineraryPlanner';
 
 import TunisiaPage from './pages/TunisiaPage';
 import GreecePage from './pages/GreecePage';
@@ -21,17 +22,26 @@ function App() {
         <HeroSection />
         <IntroductionSection />
         <KeyHighlightsSection />
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/plan-your-trip" element={<PlanYourTrip />} />
-          <Route path="/tunisia" element={<TunisiaPage />} />
-          <Route path="/greece" element={<GreecePage />} />
-          <Route path="/italy" element={<ItalyPage />} />
-          <Route path="/spain" element={<SpainPage />} />
-        </Routes>
+
+        <Switch>
+          {/* Route for Home */}
+          <Route path="/" exact component={HeroSection} />
+
+          {/* Route for plan your trip page */}
+          <Route path="/plan-your-trip" component={PlanYourTrip} />
+          
+          {/* Route for each country page */}
+          <Route path="/tunisia" component={TunisiaPage} />
+          <Route path="/greece" component={GreecePage} />
+          <Route path="/italy" component={ItalyPage} />
+          <Route path="/spain" component={SpainPage} />
+          
+          {/* Route for itinerary planner and country details */}
+          <Route path="/itinerary" component={ItineraryPlanner} />
+          <Route path="/:country-page" component={CountryDetails} />
+        </Switch>
       </div>
     </Router>
   );
-}
-
+};
 export default App;
