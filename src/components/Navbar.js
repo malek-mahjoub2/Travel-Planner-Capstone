@@ -1,8 +1,8 @@
-// src/components/Navbar.js
 
 import React, { useState } from 'react';
 import logo from '../images/logo.jpg'; 
-import './Navbar.css'; // Import CSS for styling
+import './Navbar.css'; 
+import { Link } from 'react-scroll';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,15 +17,27 @@ function Navbar() {
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
-      {/* Navigation links */}
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#Activities">Activities</a></li>
-        <li><a href="#itinerary-planner" onClick={toggleMenu}>Itinerary Planner</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li>
+          <Link to="home" smooth={true} duration={500}>Home</Link>
+        </li>
+        <li>
+          <Link to="destinations" smooth={true} duration={500}>Destinations</Link>
+        </li>
+        <li>
+          <Link to="Activities" smooth={true} duration={500}>Activities</Link>
+        </li>
+        <li>
+          <Link to="Itinerary" smooth={true} duration={500}>Itinerary Planner</Link>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
       </ul>
+
       
       {/* Hamburger icon for mobile */}
       <div className="navbar-toggle" onClick={toggleMenu}>

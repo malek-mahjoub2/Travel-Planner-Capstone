@@ -25,13 +25,16 @@ function App() {
           <Route path="spain" element={<SpainPage />} />
         </Route>
       </Routes>
-      <Routes>
+      <section id="Itinerary">
+        <Routes>
           <Route path="/" element={<ItinerarySection />} />
           <Route path="/plan/tunisia" element={<TunisiaPlan />} />
           <Route path="/plan/spain" element={<SpainPlan />} />
           <Route path="/plan/italy" element={<ItalyPlan />} />
           <Route path="/plan/greece" element={<GreecePlan />} />
         </Routes>
+      </section>
+      
     </Router>
   );
 }

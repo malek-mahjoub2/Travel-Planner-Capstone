@@ -143,11 +143,11 @@ const SpainPlan = () => {
         <div className="hotel-list">
           <div className="hotel-card">
             <h3>Luxury Hotel: The Luxury Stay</h3>
-            <p>Price: $350 per night</p>
+            <p>Price: $400-800 per night</p>
           </div>
           <div className="hotel-card">
             <h3>Mid-Range Hotel: Hotel Plaza</h3>
-            <p>Price: $150 per night</p>
+            <p>Price: $180-350 per night</p>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ const SpainPlan = () => {
 
         {/* Estimated Total Cost */}
         <h2>Estimated Total Cost</h2>
-        <p>${totalCost}</p>
+        <p>$1100-2800</p>
       </div>
     </div>
   );
