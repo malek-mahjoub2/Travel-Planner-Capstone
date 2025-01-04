@@ -4,6 +4,7 @@ import ItalyPlan from './ItalyPlan';
 import GreecePlan from './GreecePlan';
 import SpainPlan from './SpainPlan';
 
+
 const ItineraryPlanner = () => {
   const [selectedCountry, setSelectedCountry] = useState('Tunisia');
 
@@ -13,7 +14,7 @@ const ItineraryPlanner = () => {
   };
 
   return (
-    <div id="Itinerary">
+    <div id="itinerary-planner">
       <h2>Plan Your Trip</h2>
 
       {/* Country Selection Menu */}

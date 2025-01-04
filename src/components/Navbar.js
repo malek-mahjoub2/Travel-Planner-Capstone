@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import logo from '../images/logo.jpg'; 
 import './Navbar.css'; 
-import { Link } from 'react-scroll';
+
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,24 +18,12 @@ function Navbar() {
         <img src={logo} alt="Logo" />
       </div>
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <li>
-          <Link to="home" smooth={true} duration={500}>Home</Link>
-        </li>
-        <li>
-          <Link to="destinations" smooth={true} duration={500}>Destinations</Link>
-        </li>
-        <li>
-          <Link to="Activities" smooth={true} duration={500}>Activities</Link>
-        </li>
-        <li>
-          <Link to="Itinerary" smooth={true} duration={500}>Itinerary Planner</Link>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#itinerary-planner">Itinerary Planner</a></li>
+        <li><a href="#about">About</a></li> {/* Updated ID */}
+        <li><a href="#contact">Contact</a></li> {/* Updated ID */}
       </ul>
 
       
