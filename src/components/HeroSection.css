@@ -20,6 +20,8 @@
   height: 100%;
   object-fit: cover;
   z-index: -1; /* Ensure video stays behind content */
+  transform: rotate(90deg); /* Rotate video horizontally */
+  transform-origin: center; /* Keep the video centered while rotating */
 }
 
 .hero-content-top {

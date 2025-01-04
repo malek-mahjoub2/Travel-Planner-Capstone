@@ -1,20 +1,20 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
-import nature from '../videos/nature.mp4'; 
+import background from '../videos/background.mp4'; 
+
 const HeroSection = () => {
   const navigate = useNavigate();
 
- 
+  // Handle navigation to itinerary section
   const handlePlanClick = () => {
-    navigate('/plan-your-trip');
+    navigate('/itinerary'); // This will take you to the itinerary section
   };
 
   return (
     <div className="hero-container">
       <video autoPlay loop playsInline className="hero-video">
-        <source src={nature} type="video/mp4" />
+        <source src={background} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -25,6 +25,8 @@ const HeroSection = () => {
         <button className="hero-btn" onClick={handlePlanClick}>
           Plan Your Natural Escape
         </button>
+        <button className="hero-btn-transparent">Discover More</button>
+        <button className="hero-btn-white">Contact Us</button>
       </div>
     </div>
   );
