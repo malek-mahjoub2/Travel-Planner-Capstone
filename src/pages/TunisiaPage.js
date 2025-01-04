@@ -2,7 +2,7 @@ import React from 'react';
 import './TunisiaPage.css';  // Ensure to add your CSS file here
 
 // Importing images for the sections
-import tunisiaHeaderImage from '../images/tunisiaHeader.jpg';  // Image for the header
+import tunisiaHeaderImage from '../images/header.jpg';  // Image for the header
 import carthageImage from '../images/carthage.jpg';  // Image for Carthage
 import saharaImage from '../images/sahara.jpg';  // Image for Sahara Desert
 import hammametImage from '../images/hammamet.jpg';  // Image for Hammamet

@@ -1,20 +1,38 @@
-import React from 'react';
-import './styles.css';
-import DestinationCard from './DestinationCard';
+import React, { useState } from 'react';
+import TunisiaPlan from './TunisiaPlan';
+import ItalyPlan from './ItalyPlan';
+import GreecePlan from './GreecePlan';
+import SpainPlan from './SpainPlan';
 
-const ItineraryPlanner = () => {
+const ItinerarySection = () => {
+  const [selectedCountry, setSelectedCountry] = useState('Tunisia');
+
+  // Function to handle country change
+  const handleCountryChange = (country) => {
+    setSelectedCountry(country);
+  };
+
   return (
-    <div className="itinerary-container">
-      <h1>Choose Your Mediterranean Adventure!</h1>
-      <p>Click on a country to start planning your dream trip!</p>
-      <div className="countries">
-        <DestinationCard country="Tunisia" />
-        <DestinationCard country="Spain" />
-        <DestinationCard country="Greece" />
-        <DestinationCard country="Italy" />
+    <div id="itinerary-section">
+      <h2>Plan Your Trip</h2>
+
+      {/* Country Selection Menu */}
+      <div className="menu">
+        <button onClick={() => handleCountryChange('Tunisia')}>Tunisia</button>
+        <button onClick={() => handleCountryChange('Italy')}>Italy</button>
+        <button onClick={() => handleCountryChange('Greece')}>Greece</button>
+        <button onClick={() => handleCountryChange('Spain')}>Spain</button>
+      </div>
+
+      {/* Display the selected country's itinerary */}
+      <div className="itinerary-content">
+        {selectedCountry === 'Tunisia' && <TunisiaPlan />}
+        {selectedCountry === 'Italy' && <ItalyPlan />}
+        {selectedCountry === 'Greece' && <GreecePlan />}
+        {selectedCountry === 'Spain' && <SpainPlan />}
       </div>
     </div>
   );
 };
 
-export default ItineraryPlanner;
+export default ItinerarySection;

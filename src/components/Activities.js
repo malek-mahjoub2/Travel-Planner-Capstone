@@ -1,15 +1,15 @@
 import React from 'react';
-import './IntroductionSection.css'; 
+import './Activities.css'; 
 import hiking from '../images/hiking.jpg';
 import river from '../images/river.jpg';
 import wildlife from '../images/wildlife.jfif'; 
 
-const IntroductionSection = () => {
+const Activities = () => {
   return (
     <div className="intro-container">
-      <h2 className="intro-title">Discover the Mediterranean Beyond the Beaches</h2>
+      <h2 className="intro-title">Explore the Mediterranean  Adventure Awaits!</h2>
       <p className="intro-text">
-        From the tranquil rivers of Tunisia to the green hills of Italy, the Mediterranean offers breathtaking landscapes that await your discovery. Join us as we explore nature's hidden gems across the Mediterranean.
+          From the sun-kissed beaches of Spain to the rugged mountains of Greece, the Mediterranean is a treasure trove of natural wonders. Whether you're hiking through lush trails, kayaking along serene rivers, or discovering vibrant wildlife, each country offers unique experiences that will leave you in awe. Dive into the heart of the Mediterranean and create unforgettable memories.
       </p>
       
       <div className="intro-icons">
@@ -30,4 +30,4 @@ const IntroductionSection = () => {
   );
 };
 
-export default IntroductionSection;
+export default Activities;

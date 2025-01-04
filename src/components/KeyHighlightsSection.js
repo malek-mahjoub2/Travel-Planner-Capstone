@@ -24,9 +24,9 @@ const KeyHighlightsSection = () => {
           <div className="rating">
             <span>⭐⭐⭐⭐</span>
           </div>
-          <Link to="/tunisia" className="explore-btn">
+          <a href="/tunisia" target="_blank" className="explore-btn">
             View Details <FaArrowRight />
-          </Link>
+          </a>
         </div>
         
         <div className="country-item">

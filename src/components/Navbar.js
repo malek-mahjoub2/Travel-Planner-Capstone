@@ -21,7 +21,7 @@ function Navbar() {
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><a href="#">Home</a></li>
         <li><a href="#">Destinations</a></li>
-        <li><a href="#">Activities</a></li>
+        <li><a href="#Activities">Activities</a></li>
         <li><a href="#itinerary-planner" onClick={toggleMenu}>Itinerary Planner</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>

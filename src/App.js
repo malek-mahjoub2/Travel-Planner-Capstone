@@ -1,47 +1,39 @@
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
-
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import PlanYourTrip from './components/PlanYourTrip';  
-import IntroductionSection from './components/IntroductionSection';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import KeyHighlightsSection from './components/KeyHighlightsSection';
-import ItineraryPlanner from './components/ItineraryPlanner';
-
+import TunisiaPlan from './components/TunisiaPlan'; 
+import SpainPlan from './components/SpainPlan';
+import ItalyPlan from './components/ItalyPlan';
+import GreecePlan from './components/GreecePlan'; 
 import TunisiaPage from './pages/TunisiaPage';
 import GreecePage from './pages/GreecePage';
 import ItalyPage from './pages/ItalyPage';
 import SpainPage from './pages/SpainPage';
-
+import ItinerarySection from './components/ItineraryPlanner';
 
 function App() {
   return (
     <Router>
-      <div className="app-container">
-        <Navbar />
-        <HeroSection />
-        <IntroductionSection />
-        <KeyHighlightsSection />
-
-        <Switch>
-          {/* Route for Home */}
-          <Route path="/" exact component={HeroSection} />
-
-          {/* Route for plan your trip page */}
-          <Route path="/plan-your-trip" component={PlanYourTrip} />
-          
-          {/* Route for each country page */}
-          <Route path="/tunisia" component={TunisiaPage} />
-          <Route path="/greece" component={GreecePage} />
-          <Route path="/italy" component={ItalyPage} />
-          <Route path="/spain" component={SpainPage} />
-          
-          {/* Route for itinerary planner and country details */}
-          <Route path="/itinerary" component={ItineraryPlanner} />
-          <Route path="/:country-page" component={CountryDetails} />
-        </Switch>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<KeyHighlightsSection />} />
+          <Route path="tunisia" element={<TunisiaPage />} />
+          <Route path="greece" element={<GreecePage />} />
+          <Route path="italy" element={<ItalyPage />} />
+          <Route path="spain" element={<SpainPage />} />
+        </Route>
+      </Routes>
+      <Routes>
+          <Route path="/" element={<ItinerarySection />} />
+          <Route path="/plan/tunisia" element={<TunisiaPlan />} />
+          <Route path="/plan/spain" element={<SpainPlan />} />
+          <Route path="/plan/italy" element={<ItalyPlan />} />
+          <Route path="/plan/greece" element={<GreecePlan />} />
+        </Routes>
     </Router>
   );
-};
+}
+
 export default App;

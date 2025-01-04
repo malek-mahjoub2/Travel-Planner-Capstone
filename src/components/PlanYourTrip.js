@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PlanYourTrip.css';
-import { getWeather, getPricing, getHotels } from './api'; // Import the API functions
+import { getWeather, getPricing, getHotels } from './api';
 
 const PlanYourTrip = () => {
   const [destination, setDestination] = useState('');
