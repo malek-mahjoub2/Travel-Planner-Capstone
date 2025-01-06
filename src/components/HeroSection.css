@@ -5,11 +5,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   color: white;
   text-align: center;
-  background: black;
+  
+  padding-bottom: 50px;
 }
 
 .hero-video {
@@ -20,19 +21,8 @@
   height: 100%;
   object-fit: cover;
   z-index: -1; /* Ensure video stays behind content */
-  transform: rotate(90deg); /* Rotate video horizontally */
+  transform: rotate(-90deg); /* Rotate video horizontally */
   transform-origin: center; /* Keep the video centered while rotating */
-}
-
-.hero-content-top {
-  padding-top: 20px;
-}
-
-.hero-title-top {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
 }
 
 .hero-content {
@@ -46,49 +36,61 @@
   font-weight: 300;
 }
 
+/* Plan Your Trip Button */
 .hero-btn {
-  background-color: #007bff;
-  color: white;
+  background-color: white;
+  color: #007bff; /* Blue text */
   font-size: 1.2rem;
-  padding: 15px 35px;
-  border-radius: 30px;
+  padding: 20px 30px;
+  
+  border: 2px solid #007bff; /* Blue border */
   text-decoration: none;
-  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-btn:hover {
-  background-color: #0056b3;
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+  transform: translateY(-5px);
+}
+
+/* Contact Us Button - Transparent */
+.hero-btn-transparent {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white; /* White border */
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn-transparent:hover {
+  background-color: white;
+  color: #007bff; /* Blue text on hover */
   transform: translateY(-5px);
 }
 
 @media screen and (max-width: 768px) {
-  .hero-title-top {
-    font-size: 2.2rem;
-  }
-
   .hero-subtitle {
     font-size: 1.1rem;
   }
 
-  .hero-btn {
+  .hero-btn, .hero-btn-transparent {
     font-size: 1rem;
-    padding: 12px 25px;
+    padding: 15px 25px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .hero-title-top {
-    font-size: 1.8rem;
-  }
-
   .hero-subtitle {
     font-size: 1rem;
   }
 
-  .hero-btn {
+  .hero-btn, .hero-btn-transparent {
     font-size: 0.9rem;
-    padding: 10px 20px;
+    padding: 12px 20px;
   }
 }

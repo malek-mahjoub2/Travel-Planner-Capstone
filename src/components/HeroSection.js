@@ -11,6 +11,10 @@ const HeroSection = () => {
     navigate('/itinerary'); // This will take you to the itinerary section
   };
 
+  const handleContactClick = () => {
+    navigate('/contact'); // This will take you to the contact section
+  };
+
   return (
     <div className="hero-container">
       <video autoPlay loop playsInline className="hero-video">
@@ -25,8 +29,9 @@ const HeroSection = () => {
         <button className="hero-btn" onClick={handlePlanClick}>
           Plan Your Natural Escape
         </button>
-        <button className="hero-btn-transparent">Discover More</button>
-        <button className="hero-btn-white">Contact Us</button>
+        <button className="hero-btn-transparent" onClick={handleContactClick}>
+          Contact Us
+        </button>
       </div>
     </div>
   );
