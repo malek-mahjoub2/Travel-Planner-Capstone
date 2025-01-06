@@ -23,9 +23,9 @@ const HeroSection = () => {
       </video>
 
       <div className="hero-content">
-        <p className="hero-subtitle">
-          Discover tranquil rivers, green valleys, and sun-kissed coasts.
-        </p>
+        <h3 className="hero-subtitle">
+          Live Your Dream Travel With Us
+        </h3>
         <button className="hero-btn" onClick={handlePlanClick}>
           Plan Your Natural Escape
         </button>

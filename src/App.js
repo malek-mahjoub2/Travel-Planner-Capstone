@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import About from './components/About';
 import KeyHighlightsSection from './components/KeyHighlightsSection';
+import About from './components/About';
+import ItinerarySection from './components/ItineraryPlanner';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+
 import TunisiaPlan from './components/TunisiaPlan';
 import SpainPlan from './components/SpainPlan';
 import ItalyPlan from './components/ItalyPlan';
 import GreecePlan from './components/GreecePlan';
+
 import TunisiaPage from './pages/TunisiaPage';
 import GreecePage from './pages/GreecePage';
 import ItalyPage from './pages/ItalyPage';
 import SpainPage from './pages/SpainPage';
-import ItinerarySection from './components/ItineraryPlanner';
-import Contact from './components/Contact';
 
 function App() {
   return (
@@ -37,9 +41,8 @@ function App() {
         </Routes>
         
         <About />
-        
-        
         <Contact />
+        <Footer />
         
     </Router>
   );
