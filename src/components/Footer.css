@@ -23,10 +23,14 @@
     margin: 10px;
     min-width: 250px;
   }
-  
+   
+  .logo-placeholder img {
+    width: 120px; /* Adjust logo size */
+  }
   .footer-logo h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
+    color:#008CBA;
   }
   
   .footer-logo p {
@@ -38,7 +42,7 @@
     margin-bottom: 10px;
   }
   
-  .footer-contact p, .footer-social a {
+  .footer-contact p{
     font-size: 14px;
   }
   
@@ -66,4 +70,28 @@
   .footer-bottom p {
     margin: 0;
   }
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .social-icon {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icon:hover {
+    color: #0073e6; /* Light blue on hover */
+  }
+  .social-icon i {
+    margin-right: 10px;
+    font-size: 20px; /* Icon size */
+  }
+  
+  
   

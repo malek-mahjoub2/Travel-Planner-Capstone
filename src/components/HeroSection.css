@@ -93,3 +93,36 @@
     padding: 12px 20px;
   }
 }
+.hero-search {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #0073e6;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #005bb5;
+}
+

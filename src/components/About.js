@@ -6,7 +6,7 @@ import logo from '../images/logo.jpg';
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="container">
         
         <div className="about-header">
@@ -49,7 +49,7 @@ const About = () => {
           </p>
         </div>
         <div className="client-reviews-container">
-          <h2>What Our Clients Say About Us</h2>
+
           <ClientReviews />
         </div>
 
