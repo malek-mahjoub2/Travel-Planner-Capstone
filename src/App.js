@@ -6,7 +6,7 @@ import Activities from './components/Activities';
 import Footer from './components/Footer'; // Ensure this file exists
 import About from './components/About';
 import ItinerarySection from './components/ItineraryPlanner';
-import Contact from './components/Contact';
+import KeyHighlightsSection from './components/KeyHighlightsSection';
 
 import TunisiaPlan from './components/TunisiaPlan';
 import SpainPlan from './components/SpainPlan';
@@ -36,7 +36,11 @@ function App() {
                 <section id="Activities">
                   <Activities />
                 </section>
+                <KeyHighlightsSection />
+                <About /> {/* About section only on the homepage */}
+                <Footer /> {/* Footer only on the homepage */}
               </>
+            
             }
           />
 
@@ -46,10 +50,9 @@ function App() {
           <Route path="italy" element={<ItalyPage />} />
           <Route path="spain" element={<SpainPage />} />
 
-          {/* Itinerary, About, and Contact Pages */}
+          
           <Route path="itinerary" element={<ItinerarySection />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
+      
 
           {/* Plan Pages */}
           <Route path="plan/tunisia" element={<TunisiaPlan />} />
@@ -58,8 +61,7 @@ function App() {
           <Route path="plan/greece" element={<GreecePlan />} />
         </Routes>
 
-        <About />
-        <Footer />
+        
       </div>
     </Router>
   );

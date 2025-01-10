@@ -36,11 +36,16 @@
     padding: 50px 20px;
     background-color: #fff;
   }
+  .destinations-section h2{
+    margin-bottom: 40px;
+  }
   
   .destinations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
   }
   
   .destination-item {
@@ -48,12 +53,9 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
   }
   
-  .destination-item:hover {
-    transform: scale(1.05);
-  }
+ 
   
   .destination-image {
     width: 100%;
@@ -76,17 +78,22 @@
   /* Styling for travel essentials */
   .essentials-section {
     padding: 50px 20px;
-    background-color: #f9f9f9;
+    padding: 50px 20px;
+    background-color: white;
   }
   
   .essentials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+    
+    margin: 0 auto;
   }
   
   .essential-item {
-    background-color: #fff;
+    background-color:  #f4f4f4;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,6 +119,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
   }
   
   .cuisine-item {
@@ -143,4 +152,10 @@
     font-size: 1rem;
     color: #555;
   }
-  
+  @media (max-width: 768px) {
+    .destinations-grid,
+    .essentials-grid,
+    .cuisine-grid {
+      grid-template-columns: 1fr; /* One item per row on smaller screens */
+    }
+  }

@@ -9,7 +9,7 @@ import veniceImage from '../images/venice.jpg';  // Image for Venice
 import amalfiImage from '../images/amalfi.jpg';  // Image for Amalfi Coast
 import pastaImage from '../images/pasta.jpg';  // Image for pasta
 import gelatoImage from '../images/gelato.jpg';  // Image for gelato
-
+import pizzaImage from '../images/pizza.jpg';
 const ItalyPage = () => {
   return (
     <div className="italy-page">
@@ -93,6 +93,11 @@ const ItalyPage = () => {
             <h3>Gelato</h3>
             <p>No trip to Italy is complete without sampling authentic Italian gelato. Made with fresh ingredients, it’s the perfect treat for any time of day.</p>
           </div>
+          <div className="cuisine-item">
+      <img src={pizzaImage} alt="Margherita Pizza" className="cuisine-image" />
+      <h3>Margherita Pizza</h3>
+      <p>Indulge in the classic Margherita Pizza, topped with fresh tomatoes, mozzarella, basil, and a drizzle of olive oil—a true Italian favorite.</p>
+    </div>
         </div>
       </div>
 
