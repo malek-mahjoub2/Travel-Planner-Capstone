@@ -5,12 +5,14 @@
   }
   
   .destinations-grid {
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
   }
   
   .destination-item {
+    
     background-color: #f4f4f4;
     border-radius: 10px;
     overflow: hidden;
@@ -37,6 +39,6 @@
   .destination-item p {
     padding: 0 20px 20px;
     font-size: 1rem;
-    color: #555;
+    color: #ffffff;
   }
   

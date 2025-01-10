@@ -2,13 +2,13 @@ import React from 'react';
 import './TunisiaPage.css';  // Ensure to add your CSS file here
 
 // Importing images for the sections
-import tunisiaHeaderImage from '../images/header.jpg';  // Image for the header
+import tunisiaHeaderImage from '../images/tunisiaHeader.jpg';  // Image for the header
 import carthageImage from '../images/carthage.jpg';  // Image for Carthage
 import saharaImage from '../images/sahara.jpg';  // Image for Sahara Desert
 import hammametImage from '../images/hammamet.jpg';  // Image for Hammamet
 import couscousImage from '../images/couscous.jpg';  // Image for couscous
 import brikImage from '../images/brik.jpg';  // Image for brik
-
+import fricassiImage from '../images/fricassi.jpg';
 
 const TunisiaPage = () => { 
   return (
@@ -89,6 +89,14 @@ const TunisiaPage = () => {
             <h3>Brik</h3>
             <p>A popular Tunisian pastry, brik is filled with tuna, egg, and herbs, deep-fried to crispy perfection.</p>
           </div>
+          <div className="cuisine-item">
+            <img src={fricassiImage} alt="Fricassi" className="cuisine-image" />
+            <h3>Fricassi</h3>
+            <p>
+              Fricassi is a beloved Tunisian street food with tuna, egg
+              with Tunisian Harissa(spices).
+            </p>
+         </div>
         </div>
       </div>
 

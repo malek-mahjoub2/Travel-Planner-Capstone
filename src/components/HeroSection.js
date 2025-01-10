@@ -14,19 +14,19 @@ const HeroSection = () => {
     const handleSearchSubmit = (event) => {
       event.preventDefault();
       
-      // Check the search query and navigate to the appropriate page
+      
       switch (searchQuery.toLowerCase()) {
         case 'tunisia':
-          navigate('/pages/TunisiaPage');
+          navigate('/tunisia');
           break;
         case 'greece':
-          navigate('/pages/GreecePage');
+          navigate('/greece');
           break;
         case 'spain':
-          navigate('/pages/SpainPage');
+          navigate('/spain');
           break;
         case 'italy':
-          navigate('/pages/ItalyPage');
+          navigate('/italy');
           break;
         default:
           alert('Oops! We don\'t have information on that destination yet. Please try another destination or contact us for personalized recommendations!');
@@ -34,11 +34,11 @@ const HeroSection = () => {
   
   // Handle navigation to itinerary section
   const handlePlanClick = () => {
-    navigate('/itinerary'); // This will take you to the itinerary section
+    navigate('/itinerary'); 
   };
 
   const handleContactClick = () => {
-    navigate('/contact'); // This will take you to the contact section
+    navigate('/contact'); 
   };
 
   return (
