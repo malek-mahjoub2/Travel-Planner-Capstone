@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 5px;
+  gap: 20px; 
 }
 
 .country-item {
@@ -29,11 +29,13 @@
   border-radius: 10px;
   border: 2px solid #ddd;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  width: 23%;
+  flex: 1 1 calc(25% - 20px); /* Ensure 4 items per row with gap */
   display: flex;
-  flex-direction: column; /* Ensure the content stacks vertically */
-  justify-content: flex-start; 
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100%;
+  box-sizing: border-box;
 }
 
 .country-item:hover {
@@ -43,25 +45,29 @@
 
 .image-box {
   width: 100%;
-  height: 200px;
-  padding-bottom: 100%;
+  height: 200px; /* Fixed height for images */
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .country-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure images cover the box */
 }
 
 .rating {
   font-size: 1.2rem;
   margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between stars */
+}
+
+.rating span {
+  font-size: 14px;
+  color: #666;
 }
 
 .explore-btn {
@@ -74,6 +80,8 @@
   display: inline-flex;
   align-items: center;
   transition: background-color 0.3s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add pointer cursor */
 }
 
 .explore-btn:hover {
@@ -87,12 +95,16 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .country-item {
-    width: 48%; /* Each item takes up 48% of the container width on medium screens */
+    flex: 1 1 calc(50% - 20px); /* 2 items per row on tablets */
   }
 }
 
 @media (max-width: 480px) {
   .country-item {
-    width: 100%; /* Each item takes up full width on small screens */
+    flex: 1 1 calc(50% - 20px); /* 2 items per row on phones */
+  }
+
+  .highlights-title {
+    font-size: 2rem; /* Smaller title for phones */
   }
 }

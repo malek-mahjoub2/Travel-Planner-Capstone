@@ -33,10 +33,11 @@ function App() {
             element={
               <>
                 <HeroSection />
+                <KeyHighlightsSection />
                 <section id="Activities">
                   <Activities />
                 </section>
-                <KeyHighlightsSection />
+                <ItinerarySection />
                 <About /> {/* About section only on the homepage */}
                 <Footer /> {/* Footer only on the homepage */}
               </>
