@@ -9,6 +9,8 @@ import granadaImage from '../images/granada.jpg';  // Image for Granada
 import ibizaImage from '../images/ibiza.jpeg';  // Image for Ibiza
 import paellaImage from '../images/paella.jpeg';  // Image for paella
 import tapasImage from '../images/tapas.jpg';  // Image for tapas
+import gioiaImage from '../images/gioia.jpg';
+import churrosImage from '../images/churros.jpg';
 
 const SpainPage = () => {
   return (
@@ -94,6 +96,17 @@ const SpainPage = () => {
             <img src={tapasImage} alt="Tapas" className="cuisine-image" />
             <h3>Tapas</h3>
             <p>Small plates of various Spanish dishes such as patatas bravas, jamón ibérico, and calamari. A perfect way to taste Spain’s variety.</p>
+          </div>
+          <div className="cuisine-item">
+            <img src={gioiaImage} alt="Gioia" className="cuisine-image" />
+            <h3>Gioia</h3>
+            <p>A delightful Spanish dessert, Gioia is a creamy and refreshing treat made with fresh fruits and a hint of citrus.</p>
+          </div>
+
+          <div className="cuisine-item">
+            <img src={churrosImage} alt="Churros" className="cuisine-image" />
+            <h3>Churros</h3>
+            <p>These fried dough pastries, often dipped in thick hot chocolate, are a beloved Spanish breakfast or snack.</p>
           </div>
         </div>
       </div>

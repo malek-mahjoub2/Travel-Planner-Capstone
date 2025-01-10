@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 import background from '../videos/background.mp4'; 
 
 const HeroSection = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const navigate = useNavigate();
+
     const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
     };
@@ -14,33 +13,28 @@ const HeroSection = () => {
     const handleSearchSubmit = (event) => {
       event.preventDefault();
       
-      
-      switch (searchQuery.toLowerCase()) {
-        case 'tunisia':
-          navigate('/tunisia');
-          break;
-        case 'greece':
-          navigate('/greece');
-          break;
-        case 'spain':
-          navigate('/spain');
-          break;
-        case 'italy':
-          navigate('/italy');
-          break;
-        default:
-          alert('Oops! We don\'t have information on that destination yet. Please try another destination or contact us for personalized recommendations!');
-      }};
+      const routes = {
+        tunisia: '/tunisia',
+        greece: '/greece',
+        spain: '/spain',
+        italy: '/italy',
+      };
   
-  // Handle navigation to itinerary section
+      // Get the route based on the search query
+      const route = routes[searchQuery.toLowerCase()];
+  
+      if (route) {
+        // Open the destination page in a new tab
+        window.open(route, '_blank');
+      } else {
+        // Show an alert if the destination is not found
+        alert('Oops! We don\'t have information on that destination yet. Please try another destination or contact us for personalized recommendations!');
+      }
+    };
+      
   const handlePlanClick = () => {
-    navigate('/itinerary'); 
+    window.open('/itinerary', '_self');
   };
-
-  const handleContactClick = () => {
-    navigate('/contact'); 
-  };
-
   return (
     <div className="hero-container">
       <video autoPlay loop playsInline className="hero-video">
@@ -66,9 +60,7 @@ const HeroSection = () => {
         <button className="hero-btn" onClick={handlePlanClick}>
           Plan Your Natural Escape
         </button>
-        <button className="hero-btn-transparent" onClick={handleContactClick}>
-          Contact Us
-        </button>
+        
       </div>
     </div>
   );
