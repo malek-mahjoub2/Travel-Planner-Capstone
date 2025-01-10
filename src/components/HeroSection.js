@@ -4,18 +4,34 @@ import './HeroSection.css';
 import background from '../videos/background.mp4'; 
 
 const HeroSection = () => {
-          const [searchQuery, setSearchQuery] = useState('');
-        
-          const handleSearchChange = (event) => {
-            setSearchQuery(event.target.value);
-          };
-        
-          const handleSearchSubmit = (event) => {
-            event.preventDefault();
-            alert(`Searching for: ${searchQuery}`);
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+    const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
     };
-  const navigate = useNavigate();
-
+        
+        
+    const handleSearchSubmit = (event) => {
+      event.preventDefault();
+      
+      // Check the search query and navigate to the appropriate page
+      switch (searchQuery.toLowerCase()) {
+        case 'tunisia':
+          navigate('/pages/TunisiaPage');
+          break;
+        case 'greece':
+          navigate('/pages/GreecePage');
+          break;
+        case 'spain':
+          navigate('/pages/SpainPage');
+          break;
+        case 'italy':
+          navigate('/pages/ItalyPage');
+          break;
+        default:
+          alert('Oops! We don\'t have information on that destination yet. Please try another destination or contact us for personalized recommendations!');
+      }};
+  
   // Handle navigation to itinerary section
   const handlePlanClick = () => {
     navigate('/itinerary'); // This will take you to the itinerary section
