@@ -51,7 +51,10 @@ function App() {
           <Route path="italy" element={<ItalyPage />} />
           <Route path="spain" element={<SpainPage />} />
 
-          
+          <Route path="/tunisia-plan" element={<TunisiaPlan />} />
+        <Route path="/spain-plan" element={<SpainPlan />} />
+        <Route path="/italy-plan" element={<ItalyPlan />} />
+        <Route path="/greece-plan" element={<GreecePlan />} />
           <Route path="itinerary" element={<ItinerarySection />} />
       
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './GreecePage.css';  // Ensure you have the CSS for styling
-
+import { FaArrowRight } from 'react-icons/fa';
 // Importing images for the sections
 import greeceHeaderImage from '../images/greeceHeader.jpg';  
 import athensImage from '../images/athens.jpg'; 
@@ -95,7 +95,16 @@ const GreecePage = () => {
           </div>
         </div>
       </div>
-
+      <div className="plan-trip-section">
+            <h2>Ready to Plan Your Trip to Greece?</h2>
+            <p>Click the button below to create your personalized itinerary and start your journey!</p>
+            <button
+              className="plan-trip-button"
+              onClick={() => window.open('/italy-plan', '_blank')}
+            >
+              Plan Your Trip <FaArrowRight />
+            </button>
+          </div>
     </div>
   );
 };

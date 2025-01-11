@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ItineraryPlanner.css';
 import TunisiaPlan from './TunisiaPlan';
 import ItalyPlan from './ItalyPlan';
 import GreecePlan from './GreecePlan';
@@ -19,10 +20,30 @@ const ItineraryPlanner = () => {
 
       {/* Country Selection Menu */}
       <div className="menu">
-        <button onClick={() => handleCountryChange('Tunisia')}>Tunisia</button>
-        <button onClick={() => handleCountryChange('Italy')}>Italy</button>
-        <button onClick={() => handleCountryChange('Greece')}>Greece</button>
-        <button onClick={() => handleCountryChange('Spain')}>Spain</button>
+        <button
+          className={selectedCountry === 'Tunisia' ? 'active' : ''}
+          onClick={() => handleCountryChange('Tunisia')}
+        >
+          Tunisia
+        </button>
+        <button
+          className={selectedCountry === 'Italy' ? 'active' : ''}
+          onClick={() => handleCountryChange('Italy')}
+        >
+          Italy
+        </button>
+        <button
+          className={selectedCountry === 'Greece' ? 'active' : ''}
+          onClick={() => handleCountryChange('Greece')}
+        >
+          Greece
+        </button>
+        <button
+          className={selectedCountry === 'Spain' ? 'active' : ''}
+          onClick={() => handleCountryChange('Spain')}
+        >
+          Spain
+        </button>
       </div>
 
       {/* Display the selected country's itinerary */}

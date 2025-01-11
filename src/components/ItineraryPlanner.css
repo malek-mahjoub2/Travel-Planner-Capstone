@@ -1,16 +1,14 @@
 /* Itinerary Planner Section */
 #itinerary-planner {
   padding: 60px 20px;
-  background: linear-gradient(135deg, #f5f7fa, #e6e9ef); /* Gradient background */
-  border-radius: 15px;
-  margin: 40px auto;
+  background-color: white; /* White background */
+  margin: 60px auto; /* Add space above and below */
   max-width: 1200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 #itinerary-planner h2 {
   font-size: 2.5rem;
-  color: #1A5D8B; /* Consistent heading color */
+  color: #1A5D8B; /* Title color */
   text-align: center;
   margin-bottom: 40px;
   font-family: 'Montserrat', sans-serif;
@@ -52,7 +50,7 @@
 
 /* Itinerary Content */
 .itinerary-content {
-  background-color: #fff;
+  background-color: #f9f9f9; /* Light gray background */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

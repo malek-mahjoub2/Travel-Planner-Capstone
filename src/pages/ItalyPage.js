@@ -1,7 +1,6 @@
 import React from 'react';
 import './ItalyPage.css';  // Ensure you have the CSS for styling
 
-// Importing images for the sections
 import italyHeaderImage from '../images/italyHeader.jpg';  // Image for Italy header
 import romeImage from '../images/rome.jpg';  // Image for Rome
 import florenceImage from '../images/florence.jpg';  // Image for Florence
@@ -10,6 +9,8 @@ import amalfiImage from '../images/amalfi.jpg';  // Image for Amalfi Coast
 import pastaImage from '../images/pasta.jpg';  // Image for pasta
 import gelatoImage from '../images/gelato.jpg';  // Image for gelato
 import pizzaImage from '../images/pizza.jpg';
+import { FaArrowRight } from 'react-icons/fa';
+
 const ItalyPage = () => {
   return (
     <div className="italy-page">
@@ -100,8 +101,19 @@ const ItalyPage = () => {
     </div>
         </div>
       </div>
-
+      <div className="plan-trip-section">
+        <h2>Ready to Plan Your Trip to Italy?</h2>
+        <p>Click the button below to create your personalized itinerary and start your journey!</p>
+        <button
+          className="plan-trip-button"
+          onClick={() => window.open('/italy-plan', '_blank')}
+        >
+          Plan Your Trip <FaArrowRight />
+        </button>
+      </div>
     </div>
+  
+    
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './SpainPage.css';  // Ensure you have the CSS for styling
-
+import { FaArrowRight } from 'react-icons/fa';
 // Importing images for the sections
 import spainHeaderImage from '../images/spainHeader.jpg';  // Image for Spain header
 import madridImage from '../images/madrid.jpg';  // Image for Madrid
@@ -110,7 +110,16 @@ const SpainPage = () => {
           </div>
         </div>
       </div>
-
+      <div className="plan-trip-section">
+        <h2>Ready to Plan Your Trip to Spain?</h2>
+        <p>Click the button below to create your personalized itinerary and start your journey!</p>
+        <button
+          className="plan-trip-button"
+          onClick={() => window.open('/spain-plan', '_blank')} // Open in new tab
+        >
+          Plan Your Trip <FaArrowRight />
+        </button>
+      </div>
     </div>
   );
 };

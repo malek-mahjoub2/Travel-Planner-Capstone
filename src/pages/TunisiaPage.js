@@ -9,6 +9,7 @@ import hammametImage from '../images/hammamet.jpg';  // Image for Hammamet
 import couscousImage from '../images/couscous.jpg';  // Image for couscous
 import brikImage from '../images/brik.jpg';  // Image for brik
 import fricassiImage from '../images/fricassi.jpg';
+import { FaArrowRight } from 'react-icons/fa';
 
 const TunisiaPage = () => { 
   return (
@@ -98,6 +99,16 @@ const TunisiaPage = () => {
             </p>
          </div>
         </div>
+      </div>
+      <div className="plan-trip-section">
+        <h2>Ready to Plan Your Trip to Tunisia?</h2>
+        <p>Click the button below to create your personalized itinerary and start your journey!</p>
+        <button
+          className="plan-trip-button"
+          onClick={() => window.open('/tunisia-plan', '_blank')} // Open in new tab
+        >
+          Plan Your Trip <FaArrowRight />
+        </button>
       </div>
 
     </div>
