@@ -36,7 +36,7 @@ const HeroSection = () => {
     window.open('/itinerary', '_self');
   };
   return (
-    <div className="hero-container">
+    <div className="hero-section">
       <video autoPlay loop playsInline className="hero-video">
         <source src={background} type="video/mp4" />
         Your browser does not support the video tag.

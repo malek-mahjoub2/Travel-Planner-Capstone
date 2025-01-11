@@ -5,14 +5,23 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
   
   padding-bottom: 50px;
 }
-
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 0;
+}
 .hero-video {
   position: absolute;
   top: 0;
@@ -25,14 +34,27 @@
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   padding: 0 20px;
   max-width: 800px;
+  animation: fadeIn 1.5s ease-in-out;
 }
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Plan Your Trip Button */
@@ -40,7 +62,12 @@
   background-color: white;
   color: #007bff; /* Blue text */
   font-size: 1.2rem;
-  padding: 20px 30px;
+  padding: 15px 30px;
+  border: 2px solid #007bff;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
   
   border: 2px solid #007bff; /* Blue border */
   text-decoration: none;
@@ -51,7 +78,7 @@
 .hero-btn:hover {
   background-color: #007bff; /* Blue background on hover */
   color: white; /* White text on hover */
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 /* Contact Us Button - Transparent */
@@ -97,32 +124,44 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-input {
   padding: 10px;
   font-size: 16px;
   border: 2px solid #0073e6;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
   width: 250px;
   margin-right: 10px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .search-input::placeholder {
-  color: #aaa;
+  color: #666;
 }
 
 .search-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #0073e6;
   color: white;
-  font-size: 16px;
+  font-size: 1rm;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .search-button:hover {
   background-color: #005bb5;
+  transform: translateY(-2px);
+}
+search-input:focus {
+  border-color: #005bb5;
+  box-shadow: 0 0 8px rgba(0, 115, 230, 0.5); /* Glow effect on focus */
 }
 

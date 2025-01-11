@@ -3,7 +3,12 @@ import React from 'react';
 import './About.css';  // Import the CSS for styling
 import ClientReviews from './ClientReviews';
 import logo from '../images/logo.jpg';
-
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 const About = () => {
   return (
     <section id="about" className="about-section">
@@ -57,7 +62,7 @@ const About = () => {
         <div className="contact-info">
           <h2>Get In Touch</h2>
           <p>If you're ready to plan your dream Mediterranean vacation, feel free to reach out! We're here to help you create a perfect travel experience.</p>
-          <a href="/contact" className="contact-link">Contact Us</a>
+          <a href="#contact" className="contact-link" onClick={scrollToContact}>Contact Us</a>
         </div>
       </div>
     </section>

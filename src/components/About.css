@@ -81,6 +81,11 @@ ul li strong {
   text-align: center;
 }
 
+.contact-info a{
+  color:white;
+}
+
+
 .contact-link {
 background-color: #008CBA;
   color: white;
