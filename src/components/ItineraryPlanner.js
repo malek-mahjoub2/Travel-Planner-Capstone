@@ -15,6 +15,7 @@ const ItineraryPlanner = () => {
   };
 
   return (
+    <main>
     <div id="itinerary-planner">
       <h2>Plan Your Trip</h2>
 
@@ -54,6 +55,7 @@ const ItineraryPlanner = () => {
         {selectedCountry === 'Spain' && <SpainPlan />}
       </div>
     </div>
+    </main>
   );
 };
 

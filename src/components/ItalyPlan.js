@@ -4,7 +4,7 @@ import './ItalyPlan.css';
 import headerImage from '../images/header.jpg'; // Import the header image
 
 const ItalyPlan = () => {
-  const [flights, setFlights] = useState([]);
+
   const [totalCost, setTotalCost] = useState(0);
   const [fromCity, setFromCity] = useState('BCN'); // Default from Barcelona
   const [departDate, setDepartDate] = useState('2025-06-21'); // Default date
@@ -71,6 +71,7 @@ const ItalyPlan = () => {
   };
 
   return (
+    <main>
     <div className="country-plan">
       {/* Header Image */}
       <header className="header-image">
@@ -143,6 +144,7 @@ const ItalyPlan = () => {
         <p>${totalCost}</p>
       </div>
     </div>
+    </main>
   );
 };
 

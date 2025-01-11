@@ -20,7 +20,7 @@ const Rating = ({ rating, reviews }) => {
     <div className="rating">
       {stars} <span>({reviews} reviews)</span>
     </div>
-  );
+  ); 
 };
 const KeyHighlightsSection = () => {
   const handleViewDetails = (route) => {
@@ -29,7 +29,8 @@ const KeyHighlightsSection = () => {
   
 
   return (
-    <div className="highlights-container">
+    <main>
+    <div className="key-highlights-section">
       <h1 className="highlights-title">Explore the Natural Wonders of the Mediterranean</h1>
       
       <div className="country-flex">
@@ -82,6 +83,7 @@ const KeyHighlightsSection = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 

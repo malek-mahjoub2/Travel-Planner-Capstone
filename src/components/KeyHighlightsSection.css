@@ -1,10 +1,15 @@
-/* Main container */
-.highlights-container {
-  padding: 30px;
+main {
+  background-color: #fff; /* Set parent container background to white */
+  width: 100%; }
+.key-highlights-section {
+  padding: 50px 20px;
   text-align: center;
-  background-color: white;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background-color: #fff;
+  
+  border-radius: 8px;
+  max-width: 1200px;
+  width: 100%; 
+  margin: 0 auto;
 }
 
 .highlights-title {
@@ -14,13 +19,16 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 6rem;
 }
 
 .country-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px; 
+  width: 100%; /* Ensure it takes full width */
+  padding: 0 20px;
 }
 
 .country-item {
@@ -29,12 +37,14 @@
   border-radius: 10px;
   border: 2px solid #ddd;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(25% - 20px); /* Ensure 4 items per row with gap */
+  flex: 1 1 calc(50% - 20px); /* Ensure 4 items per row with gap */
+  max-width: calc(50% - 20px);
   display: flex;
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 100%;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -74,7 +84,7 @@
   text-decoration: none;
   padding: 10px 20px;
   background-color: #FF6F61; /* Mediterranean coral color */
-  color: white;
+  color: #ffffff;
   border-radius: 5px;
   font-size: 1rem;
   display: inline-flex;

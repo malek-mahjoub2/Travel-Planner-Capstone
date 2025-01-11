@@ -2,11 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import Activities from './components/Activities';
-import Footer from './components/Footer'; // Ensure this file exists
-import About from './components/About';
-import ItinerarySection from './components/ItineraryPlanner';
+import ActivitiesSection from './components/Activities';
+import Footer from './components/Footer'; 
+import AboutSection from './components/About';
+import ItineraryPlanner from './components/ItineraryPlanner';
 import KeyHighlightsSection from './components/KeyHighlightsSection';
+import ContactSection from './components/Contact';
 
 import TunisiaPlan from './components/TunisiaPlan';
 import SpainPlan from './components/SpainPlan';
@@ -32,14 +33,27 @@ function App() {
             path="/"
             element={
               <>
+              <section id="home">
                 <HeroSection />
+              </section>
+                
+              <section id="destinations">
                 <KeyHighlightsSection />
-                <section id="Activities">
-                  <Activities />
-                </section>
-                <ItinerarySection />
-                <About /> {/* About section only on the homepage */}
-                <Footer /> {/* Footer only on the homepage */}
+              </section>
+
+              <section id="activities">
+                  <ActivitiesSection />
+              </section>
+              <section id="itinerary-planner">
+                  <ItineraryPlanner />
+              </section>
+              <section id="about">
+                <AboutSection />
+              </section>
+              <section id="contact">
+                  <ContactSection />
+              </section>
+              <Footer />
               </>
             
             }
@@ -51,11 +65,12 @@ function App() {
           <Route path="italy" element={<ItalyPage />} />
           <Route path="spain" element={<SpainPage />} />
 
-          <Route path="/tunisia-plan" element={<TunisiaPlan />} />
+        <Route path="/tunisia-plan" element={<TunisiaPlan />} />
         <Route path="/spain-plan" element={<SpainPlan />} />
         <Route path="/italy-plan" element={<ItalyPlan />} />
         <Route path="/greece-plan" element={<GreecePlan />} />
-          <Route path="itinerary" element={<ItinerarySection />} />
+
+        <Route path="itinerary" element={<ItineraryPlanner />} />
       
 
           {/* Plan Pages */}
