@@ -1,7 +1,7 @@
 // AboutSection.js
 import React from 'react';
 import './About.css';  // Import the CSS for styling
-import ClientReviews from './ClientReviews';
+import ClientReviews from './ClientReviews.js';
 import logo from '../images/logo.jpg';
 const scrollToContact = () => {
   const contactSection = document.getElementById('contact');
@@ -58,7 +58,7 @@ const About = () => {
           <ClientReviews />
         </div>
 
-        {/* Get in Touch */}
+        
         <div className="contact-info">
           <h2>Get In Touch</h2>
           <p>If you're ready to plan your dream Mediterranean vacation, feel free to reach out! We're here to help you create a perfect travel experience.</p>

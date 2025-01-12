@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './ItineraryPlanner.css';
-import TunisiaPlan from './TunisiaPlan';
-import ItalyPlan from './ItalyPlan';
-import GreecePlan from './GreecePlan';
-import SpainPlan from './SpainPlan';
+import TunisiaPlan from './TunisiaPlan.js';
+import ItalyPlan from './ItalyPlan.js';
+import GreecePlan from './GreecePlan.js';
+import SpainPlan from './SpainPlan.js';
 
 
 const ItineraryPlanner = () => {

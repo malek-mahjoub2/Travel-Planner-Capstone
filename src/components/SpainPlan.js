@@ -7,7 +7,7 @@ import madrid from '../images/madrid.jpg';
 import seville from '../images/seville.jpg'; // Import image for Seville
 import valencia from '../images/valencia.jpg'; 
 const SpainPlan = () => {
-  const [flights, setFlights] = useState([]);
+  
   const [totalCost, setTotalCost] = useState(0);
   const [fromCity, setFromCity] = useState('BCN'); // Default from Barcelona
   const [departDate, setDepartDate] = useState('2025-06-21'); // Default date
@@ -166,7 +166,7 @@ const SpainPlan = () => {
 
         {/* Estimated Total Cost */}
         <h2>Estimated Total Cost</h2>
-        <p>$1100-2800</p>
+        <p>$${totalCost}</p>
       </div>
     </div>
   );
